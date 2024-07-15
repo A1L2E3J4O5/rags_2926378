@@ -4,6 +4,11 @@
 	box-sizing: border-box;
 }
 
+h4
+{
+	display: flex;
+	justify-content: center;
+}
 
 body
 {
@@ -58,5 +63,4 @@ body
 	margin-left: 9%;
 	height: 20px;
 	width: 300px;
-	
 }

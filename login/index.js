@@ -10,23 +10,53 @@ function bienvenida()
 
 if (nom == nom.length ) 
 {
-    alert("error");
+    //alert("error");
+    Swal.fire({
+        title: '¡Error!',
+        text: 'Complete la primera casilla',
+        icon: 'success',
+        confirmButtonText: '¡Aceptar!'
+      });
 }
 else if (ape == ape.length )
 {
-    alert("error");
+   // alert("error");
+    Swal.fire({
+        title: '¡Error!',
+        text: 'Complete la segunda casilla',
+        icon: 'success',
+        confirmButtonText: '¡Aceptar!'
+      });
 }
 else if (email == email.length)
 {
-    alert("error");
+    //alert("error");
+    Swal.fire({
+        title: '¡Error!',
+        text: 'Complete la tercer casilla',
+        icon: 'success',
+        confirmButtonText: '¡Aceptar!'
+      });
 }
 else if(cont == cont.length)
 {
-    alert("error")
+    //alert("error")
+    Swal.fire({
+        title: '¡Error!',
+        text: 'Complete la cuartaa casilla',
+        icon: 'success',
+        confirmButtonText: '¡Aceptar!'
+      });
 }
 else
 {
-    alert("hola "+ nom)
+    //alert("hola "+ nom)
+    Swal.fire({
+        title: '¡Complet!',
+        text: 'Bienvenido',
+        icon: 'success',
+        confirmButtonText: '¡Aceptar!'
+      });
 }
 
 
@@ -35,6 +65,12 @@ else
 
 function login ()
 {
-    alert("bienvenido")
+    //alert("bienvenido")
+    Swal.fire({
+        title: '¡Complet!',
+        text: 'Bienvenido',
+        icon: 'success',
+        confirmButtonText: '¡Aceptar!'
+      });
 }
 
