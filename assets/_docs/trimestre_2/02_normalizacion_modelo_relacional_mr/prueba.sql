@@ -39,31 +39,35 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Usuario` (
   `usuario_rol` VARCHAR(45) NOT NULL,
   `Usuario_fecha` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`Usuario_ID`),
-  INDEX `usuario:Id` (`Usuario_ID` ASC) VISIBLE,
-  CONSTRAINT `Usuario_ID`
+  INDEX `usuario_id_idx` (`Usuario_ID` ASC),
+  CONSTRAINT `fk_usuario_reporte`
     FOREIGN KEY (`Usuario_ID`)
     REFERENCES `mydb`.`Reporte` (`Reporte_ID`)
     ON DELETE NO ACTION
-    ON UPDATE CASCADE)
+    ON UPDATE CASCADE
+)
 ENGINE = InnoDB;
+
 
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Regiistro`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Regiistro` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Registro` (
   `Registro_ID` INT NOT NULL,
   `Registro_fecha` VARCHAR(45) NOT NULL,
   `Registro_codigo` INT NOT NULL,
   `Usuario_ID` INT NULL,
   `Visitante_ID` INT NULL,
   PRIMARY KEY (`Registro_ID`),
-  CONSTRAINT `Usuario_ID`
-    FOREIGN KEY ()
-    REFERENCES `mydb`.`Usuario` ()
+  CONSTRAINT `fk_registro_usuario`
+    FOREIGN KEY (`Usuario_ID`)
+    REFERENCES `mydb`.`Usuario` (`Usuario_ID`)
     ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    ON UPDATE NO ACTION
+)
 ENGINE = InnoDB;
+
 
 
 -- -----------------------------------------------------
@@ -76,13 +80,15 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Inventario` (
   `Registro_ID` INT NULL,
   `Dispositivo_ID` VARCHAR(45) NULL,
   PRIMARY KEY (`inventario_ID`),
-  INDEX `Registri_ID_idx` (`Registro_ID` ASC) VISIBLE,
-  CONSTRAINT `Registri_ID`
+  INDEX `Registro_ID_idx` (`Registro_ID` ASC),
+  CONSTRAINT `fk_inventario_registro`
     FOREIGN KEY (`Registro_ID`)
-    REFERENCES `mydb`.`Regiistro` (`Registro_ID`)
+    REFERENCES `mydb`.`Registro` (`Registro_ID`)
     ON DELETE NO ACTION
-    ON UPDATE CASCADE)
+    ON UPDATE CASCADE
+)
 ENGINE = InnoDB;
+
 
 
 -- -----------------------------------------------------
@@ -97,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Visitante` (
   PRIMARY KEY (`Visitante_ID`),
   CONSTRAINT `Visitante_ID`
     FOREIGN KEY (`Visitante_ID`)
-    REFERENCES `mydb`.`Regiistro` (`Registro_ID`)
+    REFERENCES `mydb`.`Registro` (`Registro_ID`)
     ON DELETE NO ACTION
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
