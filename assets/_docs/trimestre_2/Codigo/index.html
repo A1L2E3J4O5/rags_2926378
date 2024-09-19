@@ -4,29 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="C:\xampp\htdocs\rags_2926378\assets\css\styles.css">
 </head>
 <body>
     <div class="container">
-        <h2>Bienvenido al Registro de Accidentes</h2>
+        <h2><center>Login</center></h2>
 
         <!-- Formulario para evaluar el daño -->
         <form id="evaluateDamageForm">
-            <label for="partes">Partes dañadas:</label>
+            <label for="partes">Username:</label>
             <input type="text" id="partes" name="partes" required>
-            <button type="submit">Evaluar Daño</button>
+            <label for="partes">Password:</label>
+            <input type="text" id="partes" name="partes" required>
+            <button type="submit" onclick="window.location.href='registros.view.html'">Entrar</button>
         </form>
-        <div id="result"></div>
-
-        <!-- Apartado para hacer preguntas -->
-        <h3>Hacer una pregunta</h3>
-        <form id="preguntaForm">
-            <label for="pregunta">Pregunta:</label>
-            <input type="text" id="pregunta" name="pregunta" required>
-            <button type="submit">Preguntar</button>
-        </form>
-        <div id="respuestaPregunta"></div>
-    </div>
+        <di id="result"></di>
 
     <script src="script.js"></script>
 </body>
