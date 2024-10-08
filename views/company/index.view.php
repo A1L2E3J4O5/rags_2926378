@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Registro de Accidentes</title>
+<<<<<<< HEAD
     <link rel="stylesheet" href="assets/css/styles.css">
+=======
+    <link rel="stylesheet" href="/rags_2926378/assets/css/styles.css">
+>>>>>>> 740f292c0302c16a9ea5c4d001b3b7ef39000667
 </head>
 <body>
     <div class="login-container">
@@ -21,6 +25,11 @@
         <p id="loginError" style="color: red; display: none;">Usuario o contraseña incorrectos</p>
     </div>
     
+<<<<<<< HEAD
     <script src="login.js"></script>
 </body>
 </html>
+=======
+</body>
+</html>
+>>>>>>> 740f292c0302c16a9ea5c4d001b3b7ef39000667
