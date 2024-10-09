@@ -1,11 +1,12 @@
-import Sidebar from './components/registro'
+import Registro from './components/registro'
+import './App.css'
+
 
 function App() {
   return(
     <div className="App">
-      <Sidebar />
+      <Registro />
     </div>
   );
 }
-
 export default App;
