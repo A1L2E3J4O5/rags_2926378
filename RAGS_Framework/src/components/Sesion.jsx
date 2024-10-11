@@ -1,7 +1,8 @@
-function Registro ()
+import '../assets/css/Sesion.css'
+function Sesion ()
 {
 return (
-    <div className="container">
+    <div className="sesion">
         <form action="">
         <h1>Iniciar Sesion</h1>
         <label >Correo</label>
@@ -14,4 +15,4 @@ return (
 );
 }
 
-export default Registro;
+export default Sesion;
