@@ -1,0 +1,136 @@
+img
+{
+    width: 50px;
+    height: 50px;
+}
+/* Estilos globales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+#form
+{
+    display:none;
+}
+/* Estilos del Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    color: white;
+}
+
+.navbar .logo h2 {
+    margin: 0;
+    font-size: 24px;
+    cursor: pointer; /* Indica que es clickeable */
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.navbar .nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Barra lateral (1/4 del ancho de la pantalla, al lado izquierdo) */
+.sidebar {
+    flex: 1; /* Ocupa 1 parte del total de 4 */
+    background-color: #e4e4e4;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease-in-out; /* Transición suave para mostrar/ocultar */
+    transform: translateX(0); /* Barra visible por defecto */
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%); /* Oculta la barra lateral */
+}
+
+/* Sección principal (3/4 del ancho de la pantalla) */
+.main-content {
+    flex: 3; /* Ocupa 3 partes del total de 4 */
+    background-color: #f4f4f4;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: flex 0.3s ease-in-out; /* Transición suave cuando cambia el ancho */
+    height: 90vh;
+}
+
+/* Clase para que el main-content ocupe todo el ancho cuando el sidebar está oculto */
+.full-width {
+    flex: 4; /* Se expande a ocupar el 100% del ancho */
+}
+
+
+/* Estilo para los textos */
+h1, h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* Estilo responsivo para pantallas pequeñas */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Las columnas se apilan una debajo de la otra */
+    }
+
+    .main-content, .sidebar {
+        flex: 1; /* Ambas toman el 100% del ancho en pantallas pequeñas */
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+    /* Ajustes para el Navbar en pantallas pequeñas */
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+}

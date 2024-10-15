@@ -3,49 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Principal</title>
-<<<<<<< HEAD
-    <link rel="stylesheet" href="index.css">
+    <title>R.A.G.S</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="../../../css/index.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Bienvenido al Registro de Accidentes</h2>
-
-        <!-- Formulario para evaluar el daño -->
-        <form id="evaluateDamageForm">
-            <label for="partes">Partes dañadas:</label>
-            <input type="text" id="partes" name="partes" required>
-            <button type="submit">Evaluar Daño</button>
-        </form>
-        <div id="result"></div>
-
-        <!-- Apartado para hacer preguntas -->
-        <h3>Hacer una pregunta</h3>
-        <form id="preguntaForm">
-            <label for="pregunta">Pregunta:</label>
-            <input type="text" id="pregunta" name="pregunta" required>
-            <button type="submit">Preguntar</button>
-        </form>
-        <div id="respuestaPregunta"></div>
-    </div>
-=======
-    <link rel="stylesheet" href="C:\xampp\htdocs\rags_2926378\assets\css\styles.css">
-</head>
-<body>
-    <div class="container">
-        <h2><center>Login</center></h2>
-
-        <!-- Formulario para evaluar el daño -->
-        <form id="evaluateDamageForm">
-            <label for="partes">Username:</label>
-            <input type="text" id="partes" name="partes" required>
-            <label for="partes">Password:</label>
-            <input type="text" id="partes" name="partes" required>
-            <button type="submit" onclick="window.location.href='registros.view.html'">Entrar</button>
-        </form>
-        <di id="result"></di>
->>>>>>> 740f292c0302c16a9ea5c4d001b3b7ef39000667
-
-    <script src="script.js"></script>
+    <nav class="navbar">
+        <div class="logo">
+            <img id="toggle-sidebar" src="./img/rags.jpg" alt="">
+        </div>
+        <h2>R.A.G.S</h2>
+    </nav>
+        <!-- Barra lateral (1/4) -->
+        <aside class="sidebar">
+            <ul class="nav-links">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">Acerca de</a></li>
+            </ul>
+        </aside>
+        <!--Crear registro-->
+        <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#createModal" id="btn">
+            <i class="fas fa-plus"></i> Crear Registro
+        </button>
+        <!--Form para crear registro-->
+            <div class="modal-content" id="form">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createModalLabel">Crear Registro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="createForm">
+                        <div class="mb-3">
+                            <label for="fecha" class="form-label">Fecha</label>
+                            <input type="date" class="form-control" id="fecha" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="documento" class="form-label">Documento</label>
+                            <input type="number" class="form-control" id="documento" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="anotaciones" class="form-label">Anotaciones</label>
+                            <textarea class="form-control" id="anotaciones"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="extras" class="form-label">Extras</label>
+                            <input type="text" class="form-control" id="extras">
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="isDevice">
+                            <label class="form-check-label" for="isDevice">Dispositivo</label>
+                        </div>
+                        <div id="deviceFields">
+                            <div class="mb-3">
+                                <label for="marca" class="form-label">Marca</label>
+                                <input type="text" class="form-control" id="marca">
+                            </div>
+                            <div class="mb-3">
+                                <label for="tipo" class="form-label">Tipo</label>
+                                <select class="form-select" id="tipo">
+                                    <option value="">Seleccione un tipo</option>
+                                    <option value="portatil">Portátil</option>
+                                    <option value="pantalla">Pantalla</option>
+                                    <option value="torre">Torre</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="referencia" class="form-label">Referencia</label>
+                                <input type="text" class="form-control" id="referencia">
+                            </div>
+                            <div class="mb-3">
+                                <label for="codigo" class="form-label">Código</label>
+                                <input type="text" class="form-control" id="codigo">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary" onclick="crearRegistro()">Guardar</button>
+                </div>
+            </div>
+        <!-- Sección principal (3/4) -->
+        <main class="main-content">
+            <div class="table-responsive">
+                
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Nombre</th>
+                            <th>Documento</th>
+                            <th>Anotaciones</th>
+                            <th>Extras</th>
+                        </tr>
+                    </thead>
+                    <tbody id="registrosTabla">
+                        <!-- Los registros se agregarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>    
+    <script src="../../../js/index.js"></script> <!-- Enlace al archivo JS -->
 </body>
 </html>
