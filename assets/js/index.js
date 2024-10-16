@@ -1,11 +1,3 @@
-const btn = document.getElementById('btn');
-const form = document.getElementById('form');
-    
-btn.addEventListener('click',()=>
-{
-    console.log('funcioan')
-})
-
 
 // Seleccionamos el logo (palabra "Mi Página") para detectar el clic
 const toggleButton = document.getElementById('toggle-sidebar');
@@ -26,3 +18,12 @@ toggleButton.addEventListener('click', () => {
         mainContent.classList.remove('full-width');
     }
 });
+
+function loadContent(page) {
+    fetch(page)
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('main-content').innerHTML = data;
+        })
+        .catch(error => console.log('Error al cargar la página:', error));
+}
