@@ -5,41 +5,203 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        
         .container {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 80px 400px 1fr 1fr 1fr;
         }
         .uno{
-            grid-column: 1;
+            display: grid;
+            grid-template-columns: 200px 1fr 200px;
         }
-        .dos{
-            grid-column: 2;
+        .un
+        {
+            justify-content: center;
+            display: flex;
+        }        
+        .do
+        {
+            display: flex;            
+            flex-direction: row-reverse;
+            align-items: center;
+        }        
+        .tr
+        {
+            justify-content: center;
+            display: flex;
+            align-items: center;
         }
         .tres{
-            grid-column: 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 80px 500px;
+        }
+        .portafolio
+        {
+            grid-column: 1/4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: xx-large;
+        }
+        .subtitulo
+        {
+            grid-column: 1;
+            grid-row: 2;
+            display: flex;
+            display: flex;
+            flex-direction: column;
+        }
+        .subtitulob
+        {
+            grid-column: 1;
+            grid-row: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: auto;
+            margin: auto;
+        }
+        .subtituloc
+        {
+            grid-column: 1;
+            grid-row: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: auto;
+            margin: auto;
         }
         .cuatro{
+            display: grid;
+            grid-template-rows: 80px 500px;
+        }
+        .qs, .contactenos
+        {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: xx-large;
+        }
+        .cjas
+        {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+        .subA
+        {
+            text-align: right;
+            padding: 15px;
+        }
+        .subB
+        {
+            grid-column: 3;
+            grid-row: 2;
+            padding: 15px;
+        }
+        .subC
+        {
             grid-column: 1;
             grid-row: 3;
+            text-align: right;
+            padding: 15px;
         }
         .cinco{
-            grid-column: 2;
+            background-color: rgb(255, 0, 0);
+            display: grid;
+            grid-template-rows: 80px 500px;
         }
-        .seis{
-            grid-column: 3;
-            grid-row: 3;
+        a
+        {
+            margin: 10px;
         }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="uno">1</div>
-        <div class="dos">2</div>
-        <div class="tres">3</div>
-        <div class="cuatro">4</div>
-        <div class="cinco">5</div>
-        <div class="seis">6</div>
+        <div class="uno">
+            <div class="un">uno</div>
+                <div class="do">
+                    <a href="#">Contactenos</a>
+                    <a href="#">Quienes Somos</a>
+                    <a href="#">Portafolio </a>
+                    <a href="#">Inicio</a>
+                </div>
+            <div class="tr"><a href="#">Ingresar</a></div>
+        </div>
+        <div class="dos"></div>
+        <div class="tres">
+            <div class="portafolio">Portafolio</div>
+            <div class="subtitulo">
+                <h3>Subtitulo</h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique corporis 
+                id fuga rerum officia voluptates, illo quos voluptatum fugit dolores quia minus
+                 debitis sapiente pariatur nulla incidunt! Rem, sapiente reprehenderit!<br>
+                 <a href="#">ver mas</a>
+            </div>
+            <div class="subtituloB">
+                <h3>Subtitulo</h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique corporis
+                 id fuga rerum officia voluptates, illo quos voluptatum fugit dolores quia minus
+                  debitis sapiente pariatur nulla incidunt! Rem, sapiente reprehenderit!<br>
+                  <a href="#">ver mas</a>
+            </div>
+            <div class="subtituloC">
+                <h3>Subtitulo</h3>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique corporis
+                 id fuga rerum officia voluptates, illo quos voluptatum fugit dolores quia minus 
+                 debitis sapiente pariatur nulla incidunt! Rem, sapiente reprehenderit! <br>
+                 <a href="#">ver mas</a>
+            </div>
+        </div>
+        <div class="cuatro">
+            <div class="qs">Quienes Somos</div>
+            <div class="cjas">
+                <div class="subA">
+                    <h3>Subtitulo</h3>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique corporis 
+                    id fuga rerum officia voluptates, illo quos voluptatum fugit dolores quia minus
+                     debitis sapiente pariatur nulla incidunt! Rem, sapiente reprehenderit!<br>    
+                </div>
+                <div class="subB">                
+                    <h3>Subtitulo</h3>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique corporis 
+                    id fuga rerum officia voluptates, illo quos voluptatum fugit dolores quia minus
+                     debitis sapiente pariatur nulla incidunt! Rem, sapiente reprehenderit!<br>
+                </div>
+                <div class="subC">                
+                    <h3>Subtitulo</h3>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique corporis 
+                    id fuga rerum officia voluptates, illo quos voluptatum fugit dolores quia minus
+                     debitis sapiente pariatur nulla incidunt! Rem, sapiente reprehenderit!<br>
+                </div>
+
+            </div>
+        </div>
+        <div class="cinco">
+            <div class="contactenos">contactenos</div>
+            <div class="caja">
+                <form action="">
+
+                </form>
+                <div class="map"></div>
+                <div class="direccion"></div>
+
+            </div>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2024 Tu Nombre. Todos los derechos reservados.</p>
+            <nav>
+                <ul>
+                    <li><a href="#about">Acerca de</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#privacy">Política de privacidad</a></li>
+                </ul>
+            </nav>
+        </footer>
     </div>
 </body>
 </html>
